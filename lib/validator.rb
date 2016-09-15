@@ -1,3 +1,8 @@
+# CreditDebitCardNumberValidator module
+# main module containe gem classes
+# use this module to deal with gem classes,
+# create objects and work with class methods
+# to validate your data
 module CreditDebitCardNumberValidator
 
   # Validator class
@@ -7,19 +12,23 @@ module CreditDebitCardNumberValidator
 
   	# class method > check
   	# check card_number variable is contain digits on it or not
+    # if there is not digits the method raise ArgumentError
+    # with message 'no card number specified'
   	def self.check card_number
   		raise ArgumentError, "no card number specified" if card_number.to_i == 0
   	end
 
   	# class method > all_info
-  	# get every thing about card number and return them in object of type Information class
-  	# return example: #<CreditDebitCardNumberValidator::Information:0x2eb4b90 @card_number="4929334156772439", @is_valid=true, @mod_10_result=0, @iin="4", @brand="Visa", @check_digit=9, @length=16>
+  	# get every information about card number and
+    # return them in object of type Information class
+  	# return example: #<CreditDebitCardNumberValidator::Information:0x2eb4b90 @card_number="4929334156772439", @is_valid=true, @mod_10_result=0, @iin=4, @brand="Visa", @check_digit="9", @length=16>
   	def self.all_information_about card_number
 
   		# check card_number variable
   		check card_number
 
   		# create new object of type Information class
+      # to store information in it
   		info = Information.new
   	
   		# validate and gathering information and store them in info object
@@ -34,9 +43,10 @@ module CreditDebitCardNumberValidator
     end
 
     # class method > validate
-    # validate card number using luhn algorithm and return array contain true if the number pass the test or false otherwise with mod 10 result
-    # return example: [true || false, mod_10_result]
-    # return example: {'luhn test' => (true || false), 'mod 10 result' => mod_10_result}
+    # validate card number using luhn algorithm and return array contain
+    # true if the number pass the test or false otherwise with mod 10 result
+    # return example: [true, 0]
+    # return example: {'luhn test' => (true), 'mod 10 result' => 0}
     def self.validate card_number
 
     	# check card_number variable
@@ -59,8 +69,9 @@ module CreditDebitCardNumberValidator
     end
 
     # class method > luhn_test
-    # validate card number using luhn algorithm and return true if the number pass the test or false otherwise
-    # return example: true || false
+    # validate card number using luhn algorithm and return
+    # true if the number pass the test or false otherwise
+    # return example: true
     def self.luhn_test card_number
 
       # check card_number variable
@@ -80,10 +91,11 @@ module CreditDebitCardNumberValidator
       (validate card_number)[1]
     end
 
-    # class method > determine_company
-    # determine card brand using IIN Ranges and return array contain the IIN of the card number and the brand name
-    # return example: [IIN, 'Brand Name']
-    # return example: {'IIN' => IIN, 'Brand Name' => 'Brand Name'}
+    # class method > determine_iin_and_brand
+    # determine card brand using IIN Ranges and return array contain
+    # the IIN of the card number and the brand name
+    # return example: [37, 'American Express']
+    # return example: {'IIN' => 37, 'Brand Name' => 'American Express'}
     def self.determine_iin_and_brand card_number
 
     	# check card_number variable
@@ -99,7 +111,7 @@ module CreditDebitCardNumberValidator
     	iin4 = card_number[0..3]
     	iin6 = card_number[0..5]
 
-    	# test all IIN Ranges of supported companies
+    	# test all IIN Ranges of supported brands
     	if (['34', '37'].include? (iin2)) && length == 15
     		[iin2.to_i, 'American Express']
     		# {'IIN' => iin2.to_i, 'Company Name' => 'American Express'}
@@ -235,8 +247,8 @@ module CreditDebitCardNumberValidator
       (determine_iin_and_company card_number)[0]
     end
 
-    # class method > determine_company
-    # determine card company using IIN Ranges and it
+    # class method > determine_brand
+    # determine card brand using IIN Ranges and return it
     # return example: 'Visa'
     def self.determine_brand card_number
 
@@ -275,6 +287,7 @@ module CreditDebitCardNumberValidator
       # add next check digits
       number.times { tmp += (card_number += next_check_digit card_number)[-1] }
 
+      # return next check digits
       tmp
     end
 
@@ -286,6 +299,7 @@ module CreditDebitCardNumberValidator
     	# check card_number variable
     	check card_number
 
+      # return card number length
     	card_number.size
     end
   end

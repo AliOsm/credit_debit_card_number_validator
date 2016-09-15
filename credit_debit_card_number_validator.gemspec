@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'credit_debit_card_number_validator'
-  s.version     = '16.09.1'
+  s.version     = '16.09.2'
   s.date        = '2016-08-13'
   s.summary     = "Validator"
   s.description = "A simple way to validate credit/debit card number uring ruby"

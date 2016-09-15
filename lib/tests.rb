@@ -1,5 +1,7 @@
+# require gem
 require 'credit_debit_card_number_validator'
 
+# test almost brand supported by gem
 p CreditDebitCardNumberValidator::Validator.all_information_about('348998173777802')     # American Express
 puts
 p CreditDebitCardNumberValidator::Validator.all_information_about('6264185212922132067') # China UnionPay
