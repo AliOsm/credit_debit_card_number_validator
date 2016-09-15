@@ -18,7 +18,7 @@ module CreditDebitCardNumberValidator
   		raise ArgumentError, "no card number specified" if card_number.to_i == 0
   	end
 
-  	# class method > all_info
+  	# class method > all_information_about
   	# get every information about card number and
     # return them in object of type Information class
   	# return example: #<CreditDebitCardNumberValidator::Information:0x2eb4b90 @card_number="4929334156772439", @is_valid=true, @mod_10_result=0, @iin=4, @brand="Visa", @check_digit="9", @length=16>
@@ -244,7 +244,7 @@ module CreditDebitCardNumberValidator
       # check card_number variable
       check card_number
 
-      (determine_iin_and_company card_number)[0]
+      (determine_iin_and_brand card_number)[0]
     end
 
     # class method > determine_brand
