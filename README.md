@@ -12,7 +12,9 @@ Our gem check any credit/debit card number by determining its brand using IIN Ra
 
 Add this line to your application's Gemfile:
 
-    gem 'credit_debit_card_number_validator'
+```ruby
+gem 'credit_debit_card_number_validator'
+```
 
 And then execute:
 
