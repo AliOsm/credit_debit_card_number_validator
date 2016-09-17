@@ -32,7 +32,7 @@ module CreditDebitCardNumberValidator
   		info = Information.new
   	
   		# validate and gathering information and store them in info object
-  		info.card_number = card_number
+  		info.card_number = card_number.to_i
   		info.is_valid, info.mod_10_result = validate card_number
   		info.iin, info.brand = determine_iin_and_brand card_number
   		info.check_digit = next_check_digit card_number
