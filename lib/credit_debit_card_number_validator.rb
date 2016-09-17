@@ -74,7 +74,7 @@ require 'validator'
 require 'information'
 
 # CreditDebitCardNumberValidator module
-# main module containe gem classes
+# main module contain gem classes
 # use this module to deal with gem classes,
 # create objects and work with class methods
 # to validate your data
