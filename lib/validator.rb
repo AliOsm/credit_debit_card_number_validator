@@ -112,123 +112,123 @@ module CreditDebitCardNumberValidator
     	iin6 = card_number[0..5]
 
     	# test all IIN Ranges of supported brands
-    	if (['34', '37'].include? (iin2)) && length == 15
-    		[iin2.to_i, 'American Express']
-    		# {'IIN' => iin2.to_i, 'Company Name' => 'American Express'}
-    	elsif iin4 == '5610' && length == 16
-    		[iin4.to_i, 'Bankcard']
-    		# {'IIN' => iin4.to_i, 'Company Name' => 'Bankcard'}
-    	elsif (('560221'..'560225').include? (iin6)) && length == 16
-    		[iin6.to_i, 'Bankcard']
-    		# {'IIN' => iin6.to_i, 'Company Name' => 'Bankcard'}
-    	elsif iin4 == '5392' && length == 16
-    		[iin4.to_i, 'CARDGUARD']
-    		# {'IIN' => iin4.to_i, 'Company Name' => 'CARDGUARD EAD BG ILS'}
-      elsif (['622', '624', '625', '626', '628'].include? (iin3)) && (length >= 16 && length <= 19)
-        [iin3.to_i, 'China UnionPay']
-        # {'IIN' => iin3.to_i, 'Company Name' => 'China UnionPay'}
-      elsif iin4 == '5019' && length == 16
-        [iin4.to_i, 'Dankort']
-        # {'IIN' => iin4.to_i, 'Company Name' => 'Dankort'}
-    	elsif (('301'..'305').include? (iin3)) && length == 14
-    		[iin3.to_i, 'Diners Club Carte Blanche']
-    		# {'IIN' => iin3.to_i, 'Company Name' => 'Diners Club Carte Blanche'}
-    	elsif (['2014', '2149'].include? (iin4)) && length == 15
-    		[iin4.to_i, 'Diners Club Carte enRoute']
-    		# {'IIN' => iin4.to_i, 'Company Name' => 'Diners Club Carte enRoute'}
-    	elsif (['36', '38', '39'].include? (iin2)) && length == 14
-    		[iin2.to_i, 'Diners Club International']
-    		# {'IIN' => iin2.to_i, 'Company Name' => 'Diners Club International'}
-    	elsif iin3 == '309' && length == 14
-    		[iin3.to_i, 'Diners Club International']
-    		# {'IIN' => iin3.to_i, 'Company Name' => 'Diners Club International'}
-    	elsif iin2 == '65' && length == 16
-    		[iin2.to_i, 'Discover Card']
-    		# {'IIN' => iin2.to_i, 'Company Name' => 'Discover Card'}
-    	elsif (('644'..'649').include? (iin3)) && length == 16
-    		[iin3.to_i, 'Discover Card']
-    		# {'IIN' => iin3.to_i, 'Company Name' => 'Discover Card'}
-    	elsif iin4 == '6011' && length == 16
-    		[iin4.to_i, 'Discover Card']
-    		# {'IIN' => iin4.to_i, 'Company Name' => 'Discover Card'}
-    	elsif (('622126'..'622925').include? (iin6)) && length == 16
-    		[iin6.to_i, 'Discover Card']
-    		# {'IIN' => iin6.to_i, 'Company Name' => 'Discover Card'}
-      elsif iin3 == '384' && length == 19
-        [iin3.to_i, 'Hipercard']
-        # {'IIN' => iin3.to_i, 'Company Name' => 'Hipercard'}
-    	elsif (('637'..'639').include? (iin3)) && length == 16
-    		[iin3.to_i, 'InstaPayment']
-    		# {'IIN' => iin3.to_i, 'Company Name' => 'InstaPayment'}
-    	elsif iin3 == '636' && (length >= 16 && length <= 19)
-    		[iin3.to_i, 'InterPayment']
-    		# {'IIN' => iin3.to_i, 'Company Name' => 'InterPayment'}
-      elsif (('353'..'358').include? (iin3)) && (length == 15 || length == 16)
-        [iin3.to_i, 'JCB']
-        # {'IIN' => iin3.to_i, 'Company Name' => 'JCB'}
-    	elsif ((('3528'..'3589').include? (iin4)) || (['3088', '3096', '3112', '3158', '3337'].include? (iin4))) && (length == 15 || length == 16)
-    		[iin4.to_i, 'JCB']
-    		# {'IIN' => iin4.to_i, 'Company Name' => 'JCB'}
-      elsif (['1800', '2131'].include? (iin4)) && length == 15
-        [iin4.to_i, 'JCB']
-        # {'IIN' => iin4.to_i, 'Company Name' => 'JCB'}
+      if (('560221'..'560225').include? (iin6)) && length == 16
+        [iin6.to_i, 'Bankcard']
+        # {'IIN' => iin6.to_i, 'Brand Name' => 'Bankcard'}
+      elsif (('622126'..'622925').include? (iin6)) && length == 16
+        [iin6.to_i, 'Discover Card']
+        # {'IIN' => iin6.to_i, 'Brand Name' => 'Discover Card'}
       elsif iin6 == '357266' && length == 19
         [iin6.to_i, 'JCB']
-        # {'IIN' => iin6.to_i, 'Company Name' => 'JCB'}
-    	elsif (['6304', '6706', '6771', '6709'].include? (iin4)) && (length >= 16 && length <= 19)
-    		[iin4.to_i, 'Laser']
-    		# {'IIN' => iin4.to_i, 'Company Name' => 'Laser'}
-      elsif (('56'..'59').include? (iin2)) && (length >= 12 && length <= 19)
-        [iin2.to_i, 'Maestro']
-        # {'IIN' => iin2.to_i, 'Company Name' => 'Maestro'}
-      elsif ((('502'..'509').include? (iin3)) || (('602'..'605').include? (iin3)) || (('671'..'675').include? (iin3)) || (['500', '621', '627', '629', '677', '679'].include? (iin3))) && (length >= 12 && length <= 19)
-        [iin3.to_i, 'Maestro']
-        # {'IIN' => iin3.to_i, 'Company Name' => 'Maestro'}
-    	elsif ((('5010'..'5018').include? (iin4)) || (('6012'..'6019').include? (iin4)) || (('6760'..'6766').include? (iin4)) || (('6768'..'6771').include? (iin4)) || (['6060', '6304', '6390', '6010'].include? (iin4))) && (length >= 12 && length <= 19)
-    		[iin4.to_i, 'Maestro']
-    		# {'IIN' => iin4.to_i, 'Company Name' => 'Maestro'}
-    	elsif ((('51'..'55').include? (iin2)) || (('23'..'26').include? (iin2))) && length == 16
-    		[iin2.to_i, 'Master Card']
-    		# {'IIN' => iin2.to_i, 'Company Name' => 'Master Card'}
-      elsif ((('223'..'229').include? (iin3)) || iin3 == '271') && length == 16
-        [iin3.to_i, 'Master Card']
-        # {'IIN' => iin3.to_i, 'Company Name' => 'Master Card'}
+        # {'IIN' => iin6.to_i, 'Brand Name' => 'JCB'}
+      elsif (['633312', '633110', '633304', '633303', '633301', '633300'].include? (iin6)) && (length == 16 || length == 18 || length == 19)
+        [iin6.to_i, 'Switch']
+        # {'IIN' => iin6.to_i, 'Brand Name' => 'Switch'}
+      elsif (('506099'..'506198').include? (iin6)) || (('650002'..'650027').include? (iin6)) && (length == 16 || length == 19)
+        [iin6.to_i, 'Verve']
+        # {'IIN' => iin6.to_i, 'Brand Name' => 'Verve'}
+      elsif iin6 == '417500' && (length == 13 || length == 16)
+        [iin6.to_i, 'Visa Electron']
+        # {'IIN' => iin6.to_i, 'Brand Name' => 'Visa Electron'}
+      elsif iin4 == '5610' && length == 16
+        [iin4.to_i, 'Bankcard']
+        # {'IIN' => iin4.to_i, 'Brand Name' => 'Bankcard'}
+      elsif iin4 == '5392' && length == 16
+        [iin4.to_i, 'CARDGUARD']
+        # {'IIN' => iin4.to_i, 'Brand Name' => 'CARDGUARD'}
+      elsif iin4 == '5019' && length == 16
+        [iin4.to_i, 'Dankort']
+        # {'IIN' => iin4.to_i, 'Brand Name' => 'Dankort'}
+      elsif (['2014', '2149'].include? (iin4)) && length == 15
+        [iin4.to_i, 'Diners Club Carte enRoute']
+        # {'IIN' => iin4.to_i, 'Brand Name' => 'Diners Club Carte enRoute'}
+      elsif iin4 == '6011' && length == 16
+        [iin4.to_i, 'Discover Card']
+        # {'IIN' => iin4.to_i, 'Brand Name' => 'Discover Card'}
+      elsif ((('3528'..'3589').include? (iin4)) || (['3088', '3096', '3112', '3158', '3337'].include? (iin4))) && (length == 15 || length == 16)
+        [iin4.to_i, 'JCB']
+        # {'IIN' => iin4.to_i, 'Brand Name' => 'JCB'}
+      elsif (['1800', '2131'].include? (iin4)) && length == 15
+        [iin4.to_i, 'JCB']
+        # {'IIN' => iin4.to_i, 'Brand Name' => 'JCB'}
+      elsif (['6304', '6706', '6771', '6709'].include? (iin4)) && (length >= 16 && length <= 19)
+        [iin4.to_i, 'Laser']
+        # {'IIN' => iin4.to_i, 'Brand Name' => 'Laser'}
+      elsif ((('5010'..'5018').include? (iin4)) || (('6012'..'6019').include? (iin4)) || (('6760'..'6766').include? (iin4)) || (('6768'..'6771').include? (iin4)) || (['6060', '6304', '6390', '6010'].include? (iin4))) && (length >= 12 && length <= 19)
+        [iin4.to_i, 'Maestro']
+        # {'IIN' => iin4.to_i, 'Brand Name' => 'Maestro'}
       elsif ((('2221'..'2229').include? (iin4)) || iin4 == '2720') && length == 16
         [iin4.to_i, 'Master Card']
-        # {'IIN' => iin4.to_i, 'Company Name' => 'Master Card'}
-      elsif (['607', '608'].include? (iin3)) && length == 16
-        [iin3.to_i, 'RuPay']
-        # {'IIN' => iin3.to_i, 'Company Name' => 'RuPay'}
+        # {'IIN' => iin4.to_i, 'Brand Name' => 'Master Card'}
       elsif (('6061'..'6069').include? (iin4)) && length == 16
         [iin4.to_i, 'RuPay']
-        # {'IIN' => iin4.to_i, 'Company Name' => 'RuPay'}
-    	elsif (['6334', '6767'].include? (iin4)) && (length == 16 || length == 18 || length == 19)
-    		[iin4.to_i, 'Solo']
-    		# {'IIN' => iin4.to_i, 'Company Name' => 'Solo'}
-    	elsif (['4903', '4905', '4911', '4936', '6333', '6759'].include? (iin4)) && (length == 16 || length == 18 || length == 19)
-    		[iin4.to_i, 'Switch']
-    		# {'IIN' => iin4.to_i, 'Company Name' => 'Switch'}
-    	elsif (['633312', '633110', '633304', '633303', '633301', '633300'].include? (iin6)) && (length == 16 || length == 18 || length == 19)
-    		[iin6.to_i, 'Switch']
-    		# {'IIN' => iin6.to_i, 'Company Name' => 'Switch'}
+        # {'IIN' => iin4.to_i, 'Brand Name' => 'RuPay'}
+      elsif (['6334', '6767'].include? (iin4)) && (length == 16 || length == 18 || length == 19)
+        [iin4.to_i, 'Solo']
+        # {'IIN' => iin4.to_i, 'Brand Name' => 'Solo'}
+      elsif (['4903', '4905', '4911', '4936', '6333', '6759'].include? (iin4)) && (length == 16 || length == 18 || length == 19)
+        [iin4.to_i, 'Switch']
+        # {'IIN' => iin4.to_i, 'Brand Name' => 'Switch'}
+      elsif (['4026', '4508', '4844', '4913', '4917'].include? (iin4))  && (length == 13 || length == 16)
+        [iin4.to_i, 'Visa Electron']
+        # {'IIN' => iin4.to_i, 'Brand Name' => 'Visa Electron'}
+      elsif iin4 == '8699' && length == 15
+        [iin4.to_i, 'Voyager']
+        # {'IIN' => iin4.to_i, 'Brand Name' => 'Voyager'}
+      elsif (['622', '624', '625', '626', '628'].include? (iin3)) && (length >= 16 && length <= 19)
+        [iin3.to_i, 'China UnionPay']
+        # {'IIN' => iin3.to_i, 'Brand Name' => 'China UnionPay'}
+      elsif (('301'..'305').include? (iin3)) && length == 14
+        [iin3.to_i, 'Diners Club Carte Blanche']
+        # {'IIN' => iin3.to_i, 'Brand Name' => 'Diners Club Carte Blanche'}
+      elsif iin3 == '309' && length == 14
+        [iin3.to_i, 'Diners Club International']
+        # {'IIN' => iin3.to_i, 'Brand Name' => 'Diners Club International'}
+      elsif (('644'..'649').include? (iin3)) && length == 16
+        [iin3.to_i, 'Discover Card']
+        # {'IIN' => iin3.to_i, 'Brand Name' => 'Discover Card'}
+      elsif iin3 == '384' && length == 19
+        [iin3.to_i, 'Hipercard']
+        # {'IIN' => iin3.to_i, 'Brand Name' => 'Hipercard'}
+      elsif (('637'..'639').include? (iin3)) && length == 16
+        [iin3.to_i, 'InstaPayment']
+        # {'IIN' => iin3.to_i, 'Brand Name' => 'InstaPayment'}
+      elsif iin3 == '636' && (length >= 16 && length <= 19)
+        [iin3.to_i, 'InterPayment']
+        # {'IIN' => iin3.to_i, 'Brand Name' => 'InterPayment'}
+      elsif (('353'..'358').include? (iin3)) && (length == 15 || length == 16)
+        [iin3.to_i, 'JCB']
+        # {'IIN' => iin3.to_i, 'Brand Name' => 'JCB'}
+      elsif ((('502'..'509').include? (iin3)) || (('602'..'605').include? (iin3)) || (('671'..'675').include? (iin3)) || (['500', '621', '627', '629', '677', '679'].include? (iin3))) && (length >= 12 && length <= 19)
+        [iin3.to_i, 'Maestro']
+        # {'IIN' => iin3.to_i, 'Brand Name' => 'Maestro'}
+      elsif ((('223'..'229').include? (iin3)) || iin3 == '271') && length == 16
+        [iin3.to_i, 'Master Card']
+        # {'IIN' => iin3.to_i, 'Brand Name' => 'Master Card'}
+      elsif (['607', '608'].include? (iin3)) && length == 16
+        [iin3.to_i, 'RuPay']
+        # {'IIN' => iin3.to_i, 'Brand Name' => 'RuPay'}
+    	elsif (['34', '37'].include? (iin2)) && length == 15
+    		[iin2.to_i, 'American Express']
+    		# {'IIN' => iin2.to_i, 'Brand Name' => 'American Express'}
+    	elsif (['36', '38', '39'].include? (iin2)) && length == 14
+    		[iin2.to_i, 'Diners Club International']
+    		# {'IIN' => iin2.to_i, 'Brand Name' => 'Diners Club International'}
+    	elsif iin2 == '65' && length == 16
+    		[iin2.to_i, 'Discover Card']
+    		# {'IIN' => iin2.to_i, 'Brand Name' => 'Discover Card'}
+      elsif (('56'..'59').include? (iin2)) && (length >= 12 && length <= 19)
+        [iin2.to_i, 'Maestro']
+        # {'IIN' => iin2.to_i, 'Brand Name' => 'Maestro'}
+    	elsif ((('51'..'55').include? (iin2)) || (('23'..'26').include? (iin2))) && length == 16
+    		[iin2.to_i, 'Master Card']
+    		# {'IIN' => iin2.to_i, 'Brand Name' => 'Master Card'}
     	elsif iin1 == '1' && length == 15
     		[iin1.to_i, 'UATP']
-    		# {'IIN' => iin1.to_i, 'Company Name' => 'UATP'}
-    	elsif (('506099'..'506198').include? (iin6)) || (('650002'..'650027').include? (iin6)) && (length == 16 || length == 19)
-    		[iin6.to_i, 'Verve']
-    		# {'IIN' => iin6.to_i, 'Company Name' => 'Verve'}
-    	elsif (['4026', '4508', '4844', '4913', '4917'].include? (iin4))  && (length == 13 || length == 16)
-    		[iin4.to_i, 'Visa Electron']
-    		# {'IIN' => iin4.to_i, 'Company Name' => 'Visa Electron'}
-    	elsif iin6 == '417500' && (length == 13 || length == 16)
-    		[iin6.to_i, 'Visa Electron']
-    		# {'IIN' => iin6.to_i, 'Company Name' => 'Visa Electron'}
+    		# {'IIN' => iin1.to_i, 'Brand Name' => 'UATP'}
     	elsif iin1 == '4' && (length == 13 || length == 16)
     		[iin1.to_i, 'Visa']
-    		# {'IIN' => iin1.to_i, 'Company Name' => 'Visa'}
-    	elsif iin4 == '8699' && length == 15
-    		[iin4.to_i, 'Voyager']
-    		# {'IIN' => iin4.to_i, 'Company Name' => 'Voyager'}
+    		# {'IIN' => iin1.to_i, 'Brand Name' => 'Visa'}
     	else
     		# return 0 as IIN Range and Unknown as brand name if card number is not determined
     		[0, 'Unknown']
