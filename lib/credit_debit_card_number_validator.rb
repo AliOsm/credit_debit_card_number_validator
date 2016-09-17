@@ -4,7 +4,7 @@
 # bc4    | Bankcard                  | 16             | Luhn | 5610
 # bc6    | Bankcard                  | 16             | Luhn | 560221 - 560225
 
-# cebi   | CARDGUARD EAD BG ILS      | 16             | Luhn | 5392
+# cebi   | CARDGUARD                 | 16             | Luhn | 5392
 
 # cup    | China UnionPay            | 16, 17, 18, 19 | Unk  | 622, 624 - 626, 628
 

@@ -122,7 +122,7 @@ module CreditDebitCardNumberValidator
     		[iin6.to_i, 'Bankcard']
     		# {'IIN' => iin6.to_i, 'Company Name' => 'Bankcard'}
     	elsif iin4 == '5392' && length == 16
-    		[iin4.to_i, 'CARDGUARD EAD BG ILS']
+    		[iin4.to_i, 'CARDGUARD']
     		# {'IIN' => iin4.to_i, 'Company Name' => 'CARDGUARD EAD BG ILS'}
       elsif (['622', '624', '625', '626', '628'].include? (iin3)) && (length >= 16 && length <= 19)
         [iin3.to_i, 'China UnionPay']

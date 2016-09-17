@@ -28,7 +28,7 @@ Or install it yourself as:
 
 - American Express
 - Bankcard
-- CARDGUARD EAD BG ILS
+- CARDGUARD
 - China UnionPay
 - Dancord
 - Diners Club Carte Blanche
