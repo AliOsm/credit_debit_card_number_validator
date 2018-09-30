@@ -235,8 +235,9 @@ Return type: `Integer`.
 
 You don't need to use `Information` class! only use the object returned from `all_information_about` class method from `Validator` class.
 
+## Contributing
+Bug reports and pull requests are welcome on GitHub at https://github.com/AliOsm/credit_debit_card_number_validator.
+
 ## License
+The project is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
-Released under the MIT License
-
-Copyright (c) 2016 [AliOsm](http://fb.com/Ali.L.Malak)
